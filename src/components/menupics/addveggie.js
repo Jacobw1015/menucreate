@@ -5,8 +5,12 @@ class Veggies extends React.Component{
     render(){
         let pic = this.props.src;
        let path = `/pics/veg/${pic}.jpg`;
-       return <img src={path} /> ;
-
+       return (
+        <div>
+          <img src={path} />
+          <p>This is {this.props.veg}</p>
+        </div>
+        ) ;
     }
 }
 

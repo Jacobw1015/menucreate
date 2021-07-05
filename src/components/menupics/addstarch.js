@@ -6,7 +6,12 @@ class Starch extends React.Component{
 
         let pic = this.props.src;
         let path = `/pics/starch/${pic}.jpg`;
-        return <img src={path} /> ;
+        return (
+        <div>
+          <img src={path} />
+          <p>This is {this.props.starch}</p>
+        </div>
+        ) ;
  
 
     }

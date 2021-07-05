@@ -10,13 +10,13 @@ class Menu extends React.Component{
     constructor(props){
         super(props);
        this.state={
-        protein: ['beef','pork','salmon','Whole-Chicken'],
+        protein: ['beef','pork','salmon','Whole Chicken'],
         veggie: ['broccoli','peas','spinach','carrots'],
-        starches: ['mashedpotatos','pasta','rice','poenta'],
+        starches: ['mashed potatoes','pasta','rice','polenta'],
         isClicked: true
        }
            this.onClick=this.onClick.bind(this);
-          
+          this.changPic =this.changPic.bind(this);
           
     }
     onClick(){
@@ -24,19 +24,25 @@ class Menu extends React.Component{
       
 
     }
+    changPic(){
+      let random = Math.floor(Math.random()*4);
+      return random;
+    }
     
     render(){
-  
-      let random = Math.floor(Math.random()*4);
+      let starch = this.state.starches[this.changPic()];
+      let veg = this.state.veggie[this.changPic()];
+      let protein = this.state.protein[this.changPic()];
+
         return(
-          <div>
-            <div>
-              {this.state.isClicked && <Protein src={this.state.protein[random]}/>}
-              {this.state.isClicked && <Veggies src={this.state.veggie[random]}/>}
-              {this.state.isClicked && <Starch src={this.state.starches[random]}/>}
-            </div>
-            <Button onClick={this.onClick}/>
-          </div>
+          
+            <div className="food">
+              {this.state.isClicked && <Protein src={protein} protein={protein}/>}
+              {this.state.isClicked && <Veggies src={veg} veg={veg}/>}
+              {this.state.isClicked && <Starch src={starch} starch={starch}/>}
+            {'\n'}
+            <Button onClick={this.onClick}/></div>
+         
         );
 
     }

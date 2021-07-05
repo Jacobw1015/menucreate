@@ -9,7 +9,12 @@ class Protein extends React.Component{
     render(){
         let pic = this.props.src;
        let path = `/pics/protein/${pic}.jpg`;
-        return <img src={path} />;
+        return (
+            <div>
+              <img src={path} />
+              <p>This is {this.props.protein}</p>
+            </div>
+            ) ;
        
 
     }

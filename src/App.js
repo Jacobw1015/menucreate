@@ -4,9 +4,9 @@ import Menu from './components/menupics/menu';
 
 function App() {
   return (
-    <div className="App">
+
      <Menu />
-    </div>
+
   );
 }
 

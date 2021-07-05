@@ -1,8 +1,9 @@
 html{
   background-color: rgba(114, 46, 179, 0.356);
 }
-.App{
+#root{
   text-align: center;
   display: block;
-  margin: 0 auto;
+
+ 
 }
