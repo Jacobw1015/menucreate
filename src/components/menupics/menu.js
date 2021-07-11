@@ -1,7 +1,7 @@
 import React from "react";
-import Protein from "./addprotein";
-import Veggies from "./addveggie";
-import Starch from "./addstarch";
+import Protein from "./protein/addprotein";
+import Veggies from "./veg/addveggie";
+import Starch from "./starch/addstarch";
 import './styles.css';
 import Button from '../button/Button';
 
@@ -37,11 +37,13 @@ class Menu extends React.Component{
         return(
           
             <div className="food">
+              <Button onClick={this.onClick}/>
+              {'\n'}
               {this.state.isClicked && <Protein src={protein} protein={protein}/>}
               {this.state.isClicked && <Veggies src={veg} veg={veg}/>}
               {this.state.isClicked && <Starch src={starch} starch={starch}/>}
-            {'\n'}
-            <Button onClick={this.onClick}/></div>
+        
+            </div>
          
         );
 
